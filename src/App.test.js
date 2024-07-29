@@ -9,7 +9,6 @@ test('calculates reward points correctly for given transactions', () => {
     { customerId: 1, amount: 200, date: "2023-03-05" },
     { customerId: 2, amount: 50, date: "2023-01-10" },
     { customerId: 1, amount: 77, date: "2023-04-15" },
-    // more transactions
   ];
 
   render(<RewardPoints transactions={mockTransactions} />);
