@@ -13,7 +13,7 @@ const calculatePoints = (amount) => {
   return points;
 };
 
-const aggregatePoints = (transactions) => {
+const totalPoints = (transactions) => {
   const pointsByCustomer = {};
 
   transactions.forEach(transaction => {
@@ -39,7 +39,7 @@ const RewardPoints = ({ transactions }) => {
   const [points, setPoints] = useState({});
 
   useEffect(() => {
-    const aggregatedPoints = aggregatePoints(transactions);
+    const aggregatedPoints = totalPoints(transactions);
     setPoints(aggregatedPoints);
   }, [transactions]);
 
