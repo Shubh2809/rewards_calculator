@@ -1,0 +1,44 @@
+[
+    {
+        "customerId": 1,
+        "customerName": "John Cena",
+        "transactionDate": "2023-09-12",
+        "amount": 170
+    },
+    {
+        "customerId": 1,
+        "customerName": "John Cena",
+        "transactionDate": "2023-10-12",
+        "amount": 80
+    },
+    {
+        "customerId": 2,
+        "customerName": "Chris Ronaldo",
+        "transactionDate": "2024-07-07",
+        "amount": 77
+    },
+    {
+        "customerId": 3,
+        "customerName": "Virat Kohli",
+        "transactionDate": "2023-05-11",
+        "amount": 180
+    },
+    {
+        "customerId": 3,
+        "customerName": "Virat Kohli",
+        "transactionDate": "2023-09-28",
+        "amount": 280
+    },
+    {
+        "customerId": 4,
+        "customerName": "The Rock",
+        "transactionDate": "2024-06-04",
+        "amount": 110
+    },
+    {
+        "customerId": 5,
+        "customerName": "M Hayden",
+        "transactionDate": "2024-04-03",
+        "amount": 25
+    }
+]

@@ -1,0 +1,39 @@
+.rewards {
+    padding: 2em;
+    background-color: aliceblue;
+  }
+  
+  .customer-rewards {
+    background-color:rgb(202, 233, 233);
+    border: 3px solid #1e1d1d;
+    border-radius: 30px;
+    box-shadow:  3px 3px 3px 3px rgb(126, 126, 155);
+    padding: 10px;
+    margin-bottom: 30px;
+    margin-left: 15em;
+    margin-right: 15em;
+  }
+  
+  h1 {
+    color: #5f0707;
+    text-decoration: underline;
+    font-size: 2.2em;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+}
+  
+  h2 {
+    color: #072459f4;
+    font-size: 1.8em;
+  }
+  
+  p {
+    color: #070601;
+  }
+
+  .total {
+    color: #42a70f;
+    font-weight:bold;
+    font-size: 1.1em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
