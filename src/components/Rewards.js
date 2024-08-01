@@ -5,6 +5,7 @@ import MonthlyRewards from './Table/MonthlyRewards';
 import TotalRewards from './Table/TotalRewards';
 import Transactions from './Table/Transactions';
 import './Rewards.css';
+import logger from '../logger';
 
 const Rewards = () => {
   const [transactions, setTransactions] = useState([]);
@@ -15,9 +16,10 @@ const Rewards = () => {
     const getTransactions = async () => {
       try {
         const data = await fetchTransactions();
+        logger.debug('Transactions fetched :- ', data);
         setTransactions(data);
       } catch (error) {
-        console.error(error);
+        logger.error('An Error occured while fetching transactions:', error);
       }
     };
 
@@ -29,6 +31,7 @@ const Rewards = () => {
       const monthly = calculateRewardPoints(transactions);
       setMonthlyPoints(monthly);
       setTotalPoints(calculateTotalPoints(monthly));
+      logger.debug('Reward points calculated:-', { monthly });
     }
   }, [transactions]);
 

@@ -62,7 +62,10 @@ The application uses mock data to simulate the rewards calculation. The mock dat
 #### Snapshot-2
 ![UI_Snapshot_2](https://github.com/user-attachments/assets/41f058cf-d5e5-43e3-a2f7-b5eab15fa459)
 
-
+#### Snapshot of UI with Logger -1
+![UI_Snapshot_logger-1](https://github.com/user-attachments/assets/57d32d48-9b4d-49d0-83a8-283e4f382c71)
+#### Snapshot of UI with Logger -2
+![UI_Snapshot_logger-2](https://github.com/user-attachments/assets/dd995558-5495-46e3-9927-1e92be0ce69b)
 
 ### File Structure
 

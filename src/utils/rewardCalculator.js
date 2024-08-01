@@ -1,3 +1,4 @@
+import logger from '../logger';
 
 export const calculateRewardPoints = (transactions) => {
   return transactions.reduce((acc, transaction) => {
@@ -27,6 +28,7 @@ export const calculateRewardPoints = (transactions) => {
     }
 
     acc[customerId].monthlyPoints[year][month] += points;
+    logger.log('Monthly Reward points of', acc[customerId].name + " :- "+ points);
     return acc;
   }, {});
 };
@@ -40,6 +42,7 @@ export const calculateTotalPoints = (monthlyPoints) => {
         return sum + Object.values(yearPoints).reduce((yearSum, points) => yearSum + points, 0);
       }, 0)
     };
+    logger.log(' Total points of', acc[customerId].name + " :- " + acc[customerId].totalPoints);
     return acc;
   }, {});
 };
