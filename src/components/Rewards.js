@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTransactions } from '../services/rewardApiService';
 import { calculateRewardPoints, calculateTotalPoints } from '../utils/rewardCalculator';
+import MonthlyRewards from './Table/MonthlyRewards';
+import TotalRewards from './Table/TotalRewards';
+import Transactions from './Table/Transactions';
 import './Rewards.css';
 
 const Rewards = () => {
@@ -12,7 +15,6 @@ const Rewards = () => {
     const getTransactions = async () => {
       try {
         const data = await fetchTransactions();
-        console.log(data)
         setTransactions(data);
       } catch (error) {
         console.error(error);
@@ -33,15 +35,9 @@ const Rewards = () => {
   return (
     <div className="rewards">
       <h1>Rewards Points</h1>
-      {Object.keys(monthlyPoints).map(customerId => (
-        <div key={customerId} className="customer-rewards">
-          <h2>Customer {customerId}</h2>
-          {Object.keys(monthlyPoints[customerId]).map(month => (
-            <p key={month}>Month {month}: {monthlyPoints[customerId][month]} points</p>
-          ))}
-          <p className="total">Total: {totalPoints[customerId]} points</p>
-        </div>
-      ))}
+      <MonthlyRewards monthlyPoints={monthlyPoints} />
+      <Transactions transactions={transactions} />
+      <TotalRewards totalPoints={totalPoints} />
     </div>
   );
 };
