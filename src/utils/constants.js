@@ -1,6 +1,7 @@
 export const API_URL = '/transactionsData.json';
 export const REWARD_POINTS_HEADING = 'Rewards Points';
 export const MONTHLY_REWARDS_HEADING = 'Monthly Rewards'
+export const LOAD_TIMEOUT = 2000;
 export const CUSTOMER_ID = 'Customer ID'
 export const NAME = 'Name'
 export const MONTH = 'Month'
@@ -12,9 +13,13 @@ export const PURCHASE_DATE = 'Purchase Date'
 export const PRICE = 'Price'
 export const TOTAL_REWARDS_HEADING = 'Total Rewards'
 export const TRANSACTIONS_FETCHED = 'Transactions fetched successfully:- ';
+export const FETCHING_TRANSACTIONS = 'Fetching transactions...';
+export const CALCULATE_REWARD = 'Calculating reward points...';
 export const REWARD_POINTS = 'Reward points calculated:-';
-export const ERROR_MESSAGE = 'An error occurred while fetching data. Please try again later.';
+export const ERROR_MESSAGE = 'An error occurred while fetching data. Please try again later...';
+export const LOADING = 'Loading...';
 export const MONTHLY_REWARD = 'Monthly Reward points of';
 export const TOTAL_POINTS = ' Total points of';
 export const ASSIGNMENT = " = ";
 export const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+export const MONTH_NUMBERS = { "January": 0, "February": 1, "March": 2, "April": 3, "May": 4, "June": 5, "July": 6, "August": 7, "September": 8, "October": 9, "November": 10, "December": 11 };

@@ -10,6 +10,7 @@ export const fetchTransactions = async () => {
         const data = await response.json();
         return data;
     } catch (error) {
-        logger.error(ERROR_MESSAGE)
+        logger.error(ERROR_MESSAGE, error)
+        throw error;
     }
   };

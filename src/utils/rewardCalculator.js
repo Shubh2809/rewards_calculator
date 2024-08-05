@@ -1,15 +1,19 @@
 import logger from '../logger';
 import { MONTHLY_REWARD, TOTAL_POINTS, ASSIGNMENT, MONTH_NAMES } from './constants';
 
+export const calculateRewardPointsForAmount = (amount) => {
+  if (amount > 100) {
+    return (amount - 100) * 2 + 50; // 2 points for every dollar over $100, plus 1 point for every dollar between $50 and $100
+  } else if (amount > 50) {
+    return amount - 50; // 1 point for every dollar between $50 and $100
+  }
+  return 0; // No points for amounts $50 or less
+};
+
+
 export const calculateRewardPoints = (transactions) => {
   return transactions.reduce((acc, transaction) => {
-    let points = 0;
-    if (transaction.amount > 100) { // amount greater than $100
-      points += (transaction.amount - 100) * 2;
-      points += 50; // 1 point for each dollar between $50 and $100
-    } else if (transaction.amount > 50) { // amount between $50 and $100
-      points += (transaction.amount - 50);
-    }
+    const points = calculateRewardPointsForAmount(transaction.amount);
     const date = new Date(transaction.transactionDate);
     const month = date.getMonth(); // getMonth is 0-indexed
     const year = date.getFullYear();
@@ -33,6 +37,7 @@ export const calculateRewardPoints = (transactions) => {
     return acc;
   }, {});
 };
+
 
 export const calculateTotalPoints = (monthlyPoints) => {
   return Object.keys(monthlyPoints).reduce((acc, customerId) => {

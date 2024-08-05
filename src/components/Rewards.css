@@ -33,3 +33,10 @@
     background-color: aliceblue;
     text-align: center;
   }
+
+  .loading, .error {
+    font-size: 3em;
+    text-align: center;
+    margin: 7em 0;
+    color: blue;
+  }
