@@ -1,6 +1,8 @@
 import logger from '../logger';
 import { MONTHLY_REWARD, TOTAL_POINTS, ASSIGNMENT, MONTH_NAMES } from './constants';
 
+
+//calculate reward points according to the given amount
 export const calculateRewardPointsForAmount = (amount) => {
   if (amount > 100) {
     return (amount - 100) * 2 + 50; // 2 points for every dollar over $100, plus 1 point for every dollar between $50 and $100
@@ -10,7 +12,7 @@ export const calculateRewardPointsForAmount = (amount) => {
   return 0; // No points for amounts $50 or less
 };
 
-
+//calculate reward points for the Months
 export const calculateRewardPoints = (transactions) => {
   return transactions.reduce((acc, transaction) => {
     const points = calculateRewardPointsForAmount(transaction.amount);
@@ -38,7 +40,7 @@ export const calculateRewardPoints = (transactions) => {
   }, {});
 };
 
-
+//calculate total rewards points
 export const calculateTotalPoints = (monthlyPoints) => {
   return Object.keys(monthlyPoints).reduce((acc, customerId) => {
     const customer = monthlyPoints[customerId];

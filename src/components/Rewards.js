@@ -16,7 +16,7 @@ const Rewards = () => {
   const [error, setError] = useState(false);
 
   useEffect(() => {
-    setLoading(true);
+    setLoading(true);   // Loading... is enabled
     const getTransactions = async () => {
       try {
         logger.debug(FETCHING_TRANSACTIONS);
@@ -25,7 +25,7 @@ const Rewards = () => {
         setTransactions(data);
         setTimeout(() => {
           setLoading(false);
-        },LOAD_TIMEOUT );
+        },LOAD_TIMEOUT ); // LOAD_TIMEOUT is set to 2sec
 
         logger.debug(CALCULATE_REWARD);
         const monthly = calculateRewardPoints(data);
@@ -53,11 +53,12 @@ const Rewards = () => {
       }
     }, [transactions]); // only depends on transactions
 
-    
+  //Handling loading state
   if (loading) {
     return <div className='loading'>{LOADING}</div>;
   }
 
+  //Error handling
   if (error) {
     return <div className="error">{ERROR_MESSAGE}</div>
 }

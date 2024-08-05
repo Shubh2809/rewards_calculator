@@ -3,7 +3,7 @@ import { REWARD_POINTS_HEADING ,MONTHLY_REWARDS_HEADING, CUSTOMER_ID, NAME,MONTH
 
 const MonthlyRewards = ({ monthlyPoints }) => {
 
-  //Get Sorted Data
+  //Get Sorted for month and year
   const getSortedData = () => {
     const sortedData = [];
 
@@ -14,7 +14,7 @@ const MonthlyRewards = ({ monthlyPoints }) => {
           sortedData.push({
             customerId,
             name: customer.name,
-            year: parseInt(year, 10),
+            year: parseInt(year, 10), 
             month,
             monthNumber: MONTH_NUMBERS[month],
             points: customer.monthlyPoints[year][month]

@@ -58,14 +58,19 @@ The application uses mock data to simulate the rewards calculation. The mock dat
 ### Running Appilcation Screenshots
 
 #### Snapshot-1
-![UI_Snapshot_1](https://github.com/user-attachments/assets/a0880ead-85bd-4440-b2be-0ea3594269bc)
+![UI_Snapshot-1](https://github.com/user-attachments/assets/e33fefe8-6e73-467b-8def-45cfc9d0b665)
 #### Snapshot-2
-![UI_Snapshot_2](https://github.com/user-attachments/assets/41f058cf-d5e5-43e3-a2f7-b5eab15fa459)
+![UI_Snapshot-2](https://github.com/user-attachments/assets/e7ed3947-dc41-4633-bf6a-9cd282369e97)
 
 #### Snapshot of UI with Logger -1
-![UI_Snapshot_logger-1](https://github.com/user-attachments/assets/bfd2c7e0-3357-4371-bbdb-828d8ce8c018)
+![UI_Snapshot_logger-1](https://github.com/user-attachments/assets/63b0834a-82a0-471e-9f64-041df192b47a)
 #### Snapshot of UI with Logger -2
-![UI_Snapshot_logger-2](https://github.com/user-attachments/assets/210edc36-eb34-445f-84f2-ec3989d30069)
+![UI_Snapshot_logger-2](https://github.com/user-attachments/assets/8a169f83-d90e-4e27-a294-c0e2f1868df8)
+
+#### Snapshot of UI with Loading...
+![UI_Snapshot_Loading](https://github.com/user-attachments/assets/30f927aa-dee0-44de-ab8e-43aab006f556)
+#### Snapshot of UI with Error...
+![UI_Snapshot_Error](https://github.com/user-attachments/assets/4980e355-19d1-45af-aa0a-76af3ef5679c)
 
 ### File Structure
 
@@ -87,11 +92,11 @@ reward-calculator/
 │   │   ├── fetchTransactionData.js
 │   │   └── ...
 │   ├── utils/
+│   │   ├── constants.js
 │   │   ├── rewardCalculator.js
 │   │   └── rewardCalculator.test.js
 │   ├── App.css
 │   ├── App.js
-│   ├── App.test.js
 │   ├── index.js
 │   ├── setupTests.js
 │   └── ...
