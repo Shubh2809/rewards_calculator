@@ -1,17 +1,18 @@
 import React from 'react';
+import { REWARD_POINTS_HEADING ,MONTHLY_REWARDS_HEADING, CUSTOMER_ID, NAME,MONTH, YEAR } from '../../utils/constants';
 
 const MonthlyRewards = ({ monthlyPoints }) => {
   return (
     <div>
-      <h2>Monthly Rewards</h2>
+      <h2>{MONTHLY_REWARDS_HEADING}</h2>
       <table>
         <thead>
           <tr>
-            <th>Customer ID</th>
-            <th>Name</th>
-            <th>Month</th>
-            <th>Year</th>
-            <th>Reward Points</th>
+            <th>{CUSTOMER_ID}</th>
+            <th>{NAME}</th>
+            <th>{MONTH}</th>
+            <th>{YEAR}</th>
+            <th>{REWARD_POINTS_HEADING}</th>
           </tr>
         </thead>
         <tbody>

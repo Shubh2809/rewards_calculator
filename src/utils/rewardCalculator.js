@@ -1,4 +1,5 @@
 import logger from '../logger';
+import { MONTHLY_REWARD, TOTAL_POINTS, ASSIGNMENT, MONTH_NAMES } from './constants';
 
 export const calculateRewardPoints = (transactions) => {
   return transactions.reduce((acc, transaction) => {
@@ -10,7 +11,7 @@ export const calculateRewardPoints = (transactions) => {
       points += (transaction.amount - 50);
     }
     const date = new Date(transaction.transactionDate);
-    const month = date.getMonth() + 1; // getMonth is 0-indexed
+    const month = date.getMonth(); // getMonth is 0-indexed
     const year = date.getFullYear();
     const customerId = transaction.customerId;
     const customerName = transaction.customerName;
@@ -23,12 +24,12 @@ export const calculateRewardPoints = (transactions) => {
       acc[customerId].monthlyPoints[year] = {};
     }
 
-    if (!acc[customerId].monthlyPoints[year][month]) {
-      acc[customerId].monthlyPoints[year][month] = 0;
+    if (!acc[customerId].monthlyPoints[year][MONTH_NAMES[month]]) {
+      acc[customerId].monthlyPoints[year][MONTH_NAMES[month]] = 0;
     }
 
-    acc[customerId].monthlyPoints[year][month] += points;
-    logger.log('Monthly Reward points of', acc[customerId].name + " :- "+ points);
+    acc[customerId].monthlyPoints[year][MONTH_NAMES[month]] += points;
+    logger.log(MONTHLY_REWARD, acc[customerId].name + ASSIGNMENT + points);
     return acc;
   }, {});
 };
@@ -42,7 +43,7 @@ export const calculateTotalPoints = (monthlyPoints) => {
         return sum + Object.values(yearPoints).reduce((yearSum, points) => yearSum + points, 0);
       }, 0)
     };
-    logger.log(' Total points of', acc[customerId].name + " :- " + acc[customerId].totalPoints);
+    logger.log(TOTAL_POINTS, acc[customerId].name + ASSIGNMENT + acc[customerId].totalPoints);
     return acc;
   }, {});
 };

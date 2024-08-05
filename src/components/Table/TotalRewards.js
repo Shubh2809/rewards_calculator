@@ -1,14 +1,15 @@
 import React from 'react';
+import { REWARD_POINTS_HEADING , NAME, TOTAL_REWARDS_HEADING } from '../../utils/constants';
 
 const TotalRewards = ({ totalPoints }) => {
   return (
     <div>
-      <h2>Total Rewards</h2>
+      <h2>{TOTAL_REWARDS_HEADING}</h2>
       <table>
         <thead>
           <tr>
-            <th>Customer Name</th>
-            <th>Reward Points</th>
+            <th>{NAME}</th>
+            <th>{REWARD_POINTS_HEADING}</th>
           </tr>
         </thead>
         <tbody>
