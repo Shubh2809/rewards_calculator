@@ -1,7 +1,10 @@
 export const API_URL = '/transactionsData.json';
 export const REWARD_POINTS_HEADING = 'Rewards Points';
 export const MONTHLY_REWARDS_HEADING = 'Monthly Rewards'
-export const LOAD_TIMEOUT = 2000;
+export const LOAD_TIMEOUT = 3000;
+export const ERROR_INVALID_AMOUNT = 'Entered invalid amount: {%amount%}';
+export const ERROR_INVALID_PURCHASE_DATE = 'Entered invalid purchase date: {%purchaseDate%}';
+export const ERROR_INVALID_TRANSACTION_DATE = 'Entered invalid transaction date: {%transactionDate%}';
 export const CUSTOMER_ID = 'Customer ID'
 export const NAME = 'Name'
 export const MONTH = 'Month'

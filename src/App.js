@@ -1,11 +1,11 @@
 import React from 'react';
-import Rewards from './components/Rewards';
 import './App.css';
+import Rewards from './components/screens/Rewards';
 
 function App() {
   return (
     <div className="App">
-      <Rewards />
+      <Rewards/>
     </div>
   );
 }

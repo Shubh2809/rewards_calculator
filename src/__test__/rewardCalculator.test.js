@@ -1,4 +1,4 @@
-import { calculateRewardPoints, calculateTotalPoints, calculateRewardPointsForAmount } from './rewardCalculator';
+import { calculateRewardPoints, calculateTotalPoints, calculateRewardPointsForAmount } from '../utils/rewardCalculator';
 
 const mockTransactions = [
         { transactionId : 1, customerId: 1, customerName: "John Cena", transactionDate: "2023-09-12", purchaseDate: "2023-09-12", product :"Protein Powder", amount: 170 },

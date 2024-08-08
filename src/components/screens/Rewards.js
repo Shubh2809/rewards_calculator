@@ -1,31 +1,30 @@
 import React, { useState, useEffect } from 'react';
-import { fetchTransactions } from '../services/rewardApiService';
-import { calculateRewardPoints, calculateTotalPoints } from '../utils/rewardCalculator';
-import MonthlyRewards from './Table/MonthlyRewards';
-import TotalRewards from './Table/TotalRewards';
-import Transactions from './Table/Transactions';
+import { fetchTransactions } from '../../services/rewardApiService';
+import { calculateRewardPoints, calculateTotalPoints } from '../../utils/rewardCalculator';
+import MonthlyRewards from '../tables/MonthlyRewards';
+import TotalRewards from '../tables/TotalRewards';
+import Transactions from '../tables/Transactions';
+import PastThreeMonthsTransactions from '../tables/PastThreeMonthsTransactions';
 import './Rewards.css';
-import logger from '../logger';
-import { TRANSACTIONS_FETCHED, LOAD_TIMEOUT, FETCHING_TRANSACTIONS, CALCULATE_REWARD, ERROR_MESSAGE, LOADING, REWARD_POINTS_HEADING, REWARD_POINTS } from '../utils/constants';
+import logger from '../../logger';
+import { TRANSACTIONS_FETCHED, FETCHING_TRANSACTIONS, CALCULATE_REWARD, ERROR_MESSAGE, LOADING, REWARD_POINTS_HEADING, REWARD_POINTS } from '../../utils/constants';
 
 const Rewards = () => {
   const [transactions, setTransactions] = useState([]);
   const [monthlyPoints, setMonthlyPoints] = useState({});
   const [totalPoints, setTotalPoints] = useState({});
-  const [loading, setLoading] = useState(null);
-  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    setLoading(true);   // Loading... is enabled
+    setLoading(true);      // Loading... is enabled
     const getTransactions = async () => {
       try {
         logger.debug(FETCHING_TRANSACTIONS);
         const data = await fetchTransactions();
         logger.debug(TRANSACTIONS_FETCHED, data);
         setTransactions(data);
-        setTimeout(() => {
-          setLoading(false);
-        },LOAD_TIMEOUT ); // LOAD_TIMEOUT is set to 2sec
+        setLoading(false);
 
         logger.debug(CALCULATE_REWARD);
         const monthly = calculateRewardPoints(data);
@@ -33,25 +32,32 @@ const Rewards = () => {
         setTotalPoints(calculateTotalPoints(monthly));
         logger.debug(REWARD_POINTS, { monthly });
       } catch (error) {
-        logger.error( ERROR_MESSAGE, error);
-        setError(error);
-        setLoading(false);
+        logger.error(ERROR_MESSAGE, error);
+        setError(error.message);
+      } finally {
+        setLoading(false);  //Loading... is disabled
       }
     };
 
     getTransactions();
   }, []);
 
-    // This useEffect only needs to depend on transactions
-    useEffect(() => {
-      if (transactions.length > 0) {
+  // This useEffect only needs to depend on transactions
+  useEffect(() => {
+    if (transactions.length > 0) {
+      try {
         logger.debug(CALCULATE_REWARD);
         const monthly = calculateRewardPoints(transactions);
         setMonthlyPoints(monthly);
         setTotalPoints(calculateTotalPoints(monthly));
         logger.debug(REWARD_POINTS, { monthly });
+      } catch (error) {
+        logger.error(ERROR_MESSAGE, error);
+        setError(error.message);
       }
-    }, [transactions]); // only depends on transactions
+    }
+  }, [transactions]); // only depends on transactions
+
 
   //Handling loading state
   if (loading) {
@@ -60,13 +66,14 @@ const Rewards = () => {
 
   //Error handling
   if (error) {
-    return <div className="error">{ERROR_MESSAGE}</div>
-}
+    return <div className="error">{error}</div>
+  }
 
   return (
     <div className="rewards">
       <h1>{REWARD_POINTS_HEADING}</h1>
       <Transactions transactions={transactions} />
+      <PastThreeMonthsTransactions transactions={transactions} />
       <MonthlyRewards monthlyPoints={monthlyPoints} />
       <TotalRewards totalPoints={totalPoints} />
     </div>
