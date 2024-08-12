@@ -90,18 +90,18 @@ reward-calculator/
     ├── transactionsData.json
 ├── src/
 │   ├── /__test__/
-│   │   ├── MonthlyRewards.test.js
-│   │   ├── Transactions.test.js
+│   │   ├── monthlyRewards.test.js
+│   │   ├── transactions.test.js
 │   │   ├── rewardCalculator.test.js
 │   ├── components/
 │   │   ├── tables
-│   │   ├    ├── PastThreeMonthsTransactions.js
-│   │   ├    ├── MonthlyRewards.js
-│   │   ├    ├── TotalRewards.js
-│   │   ├    ├── Transactions.js
-│   │   ├── screens
-    │   │    ├── Rewards.css
-    │   │    ├── Rewards.js
+│   │   ├    ├── pastThreeMonthsTransactions.js
+│   │   ├    ├── monthlyRewards.js
+│   │   ├    ├── totalRewards.js
+│   │   ├    ├── transactions.js
+│   ├── screens
+│   │   ├── rewards.css
+│   │   ├── rewards.js
 │   │   └── ...
 │   ├── services/
 │   │   ├── fetchTransactionData.js
@@ -109,7 +109,7 @@ reward-calculator/
 │   ├── utils/
 │   │   ├── constants.js
 │   │   ├── rewardCalculator.js
-│   │   └── getPastMonths.js
+│   │   └── getPastThreeMonths.js
 │   ├── App.css
 │   ├── App.js
 │   ├── index.js

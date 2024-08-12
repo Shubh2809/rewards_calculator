@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { fetchTransactions } from '../../services/rewardApiService';
-import { calculateRewardPoints, calculateTotalPoints } from '../../utils/rewardCalculator';
-import MonthlyRewards from '../tables/MonthlyRewards';
-import TotalRewards from '../tables/TotalRewards';
-import Transactions from '../tables/Transactions';
-import PastThreeMonthsTransactions from '../tables/PastThreeMonthsTransactions';
-import './Rewards.css';
-import logger from '../../logger';
-import { TRANSACTIONS_FETCHED, FETCHING_TRANSACTIONS, CALCULATE_REWARD, ERROR_MESSAGE, LOADING, REWARD_POINTS_HEADING, REWARD_POINTS } from '../../utils/constants';
+import { fetchTransactions } from '../services/rewardApiService';
+import { calculateRewardPoints, calculateTotalPoints } from '../utils/rewardCalculator';
+import MonthlyRewards from '../components/tables/monthlyRewards';
+import TotalRewards from '../components/tables/totalRewards';
+import Transactions from '../components/tables/transactions';
+import PastThreeMonthsTransactions from '../components/tables/pastThreeMonthsTransactions';
+import './rewards.css';
+import logger from '../logger';
+import { TRANSACTIONS_FETCHED, FETCHING_TRANSACTIONS, CALCULATE_REWARD, ERROR_MESSAGE, LOADING, REWARD_POINTS_HEADING, REWARD_POINTS } from '../utils/constants';
 
 const Rewards = () => {
   const [transactions, setTransactions] = useState([]);

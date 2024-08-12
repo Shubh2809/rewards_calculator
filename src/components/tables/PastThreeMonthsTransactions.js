@@ -1,10 +1,10 @@
 import React from 'react';
-import Transactions from './Transactions';
+import Transactions from './transactions';
 import { getPastThreeMonths } from '../../utils/getPastThreeMonths';
 import { MONTH_NAMES } from '../../utils/constants';
   
 const PastThreeMonthsTransactions = ({ transactions }) => {
-  const pastThreeMonths = getPastThreeMonths();
+  const pastThreeMonths = getPastThreeMonths(transactions);
   const getTransactionsByMonth = (transactions, month, year) => {
     return transactions.filter(transaction => {
       const date = new Date(transaction.transactionDate);

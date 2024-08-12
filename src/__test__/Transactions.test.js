@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { TRANSACTIONS_ID, PRODUCT, REWARD_POINTS_HEADING, PRICE, NAME, PURCHASE_DATE } from '../utils/constants';
 import { calculateRewardPointsForAmount } from '../utils/rewardCalculator';
-import Transactions from '../components/tables/Transactions';
+import Transactions from '../components/tables/transactions';
 
 // Mock transactions data
 const mockTransactions = [

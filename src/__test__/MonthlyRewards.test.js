@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import MonthlyRewards from '../components/tables/MonthlyRewards';
+import MonthlyRewards from '../components/tables/monthlyRewards';
 import { CUSTOMER_ID, NAME, MONTH, YEAR, REWARD_POINTS_HEADING } from '../utils/constants';
 
 const mockMonthlyPoints = {
