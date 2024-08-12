@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { fetchTransactions } from '../services/rewardApiService';
 import { calculateRewardPoints, calculateTotalPoints } from '../utils/rewardCalculator';
-import MonthlyRewards from '../components/tables/monthlyRewards';
+import MonthlyRewards from '../components/tables/monthlyRewards'
 import TotalRewards from '../components/tables/totalRewards';
 import Transactions from '../components/tables/transactions';
 import PastThreeMonthsTransactions from '../components/tables/pastThreeMonthsTransactions';
