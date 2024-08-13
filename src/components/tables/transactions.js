@@ -1,5 +1,5 @@
 import React from 'react';
-import {TRANSACTIONS_HEADING, TRANSACTIONS_ID, PRODUCT, REWARD_POINTS_HEADING ,PRICE,  NAME, PURCHASE_DATE } from '../../utils/constants';
+import {TRANSACTIONS_HEADING, TRANSACTIONS_ID, CUSTOMER_ID, PRODUCT, REWARD_POINTS_HEADING ,PRICE,  NAME, PURCHASE_DATE } from '../../utils/constants';
 import { calculateRewardPointsForAmount } from '../../utils/rewardCalculator';
 
 const Transactions = ({ transactions }) => {
@@ -13,6 +13,7 @@ const Transactions = ({ transactions }) => {
          <thead>
            <tr>
              <th>{TRANSACTIONS_ID}</th>
+             <th>{CUSTOMER_ID}</th>
              <th>{NAME}</th>
              <th>{PRODUCT}</th>
              <th>{PURCHASE_DATE}</th>
@@ -26,6 +27,7 @@ const Transactions = ({ transactions }) => {
             return (
               <tr key={transaction.transactionId}>
                 <td>{transaction.transactionId}</td>
+                <td>{transaction.customerId}</td>
                 <td>{transaction.customerName}</td>
                 <td>{transaction.product}</td>
                 <td>{new Date(transaction.transactionDate).toLocaleDateString()}</td>
