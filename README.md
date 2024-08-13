@@ -93,6 +93,8 @@ reward-calculator/
 │   │   ├── monthlyRewards.test.js
 │   │   ├── transactions.test.js
 │   │   ├── rewardCalculator.test.js
+│   │   ├── pastThreeMonthsTransactions.test.js
+│   │   ├── rewards.test.js
 │   ├── components/
 │   │   ├── tables
 │   │   ├    ├── pastThreeMonthsTransactions.js
@@ -104,7 +106,7 @@ reward-calculator/
 │   │   ├── rewards.js
 │   │   └── ...
 │   ├── services/
-│   │   ├── fetchTransactionData.js
+│   │   ├── rewardApiService.js
 │   │   └── ...
 │   ├── utils/
 │   │   ├── constants.js
